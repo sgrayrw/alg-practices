@@ -1,5 +1,4 @@
 import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
@@ -102,20 +101,5 @@ public class Percolation {
     }
 
     // test client (optional)
-    public static void main(String[] args) {
-        Percolation model = new Percolation(10);
-        StdRandom.setSeed(System.currentTimeMillis());
-
-        int x, y;
-        while (!model.percolates()) {
-            do {
-                x = StdRandom.uniform(1, 11);
-                y = StdRandom.uniform(1, 11);
-            } while (model.isOpen(x, y));
-
-            model.open(x, y);
-        }
-
-        System.out.printf("Total: %d, Opened: %d\n", model.n * model.n, model.openCount);
-    }
+    public static void main(String[] args) {}
 }
