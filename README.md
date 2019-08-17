@@ -3,3 +3,7 @@
 ## Percolation
 - [Specs](https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php)
 - [Code](src/Percolation)
+
+## Queues
+- [Specs](https://coursera.cs.princeton.edu/algs4/assignments/queues/specification.php)
+- [Code](src/Queues)
