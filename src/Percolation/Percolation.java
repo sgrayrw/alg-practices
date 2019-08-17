@@ -7,16 +7,9 @@ public class Percolation {
         OPEN, BLOCKED
     }
     private GridStatus [][] grids;
-    private WeightedQuickUnionUF uf;
-    private int n;
+    private final WeightedQuickUnionUF uf;
+    private final int n;
     private int openCount;
-
-    // returns the index of a grid in uf
-    private int gridToUF(int row, int col) {
-        // uf[0] is the top virtual site
-        // uf[n * n + 1] is the bottom virtual site
-        return (row - 1) * this.n + col;
-    }
 
     // creates n-by-n grid, with all sites initially blocked
     public Percolation(int n) {
@@ -33,6 +26,13 @@ public class Percolation {
 
         this.n = n;
         this.uf = new WeightedQuickUnionUF(n * n + 2);
+    }
+
+    // returns the index of a grid in uf
+    private int gridToUF(int row, int col) {
+        // uf[0] is the top virtual site
+        // uf[n * n + 1] is the bottom virtual site
+        return (row - 1) * this.n + col;
     }
 
     // opens the site (row, col) if it is not open already
@@ -100,7 +100,4 @@ public class Percolation {
     public boolean percolates() {
         return this.uf.connected(0, this.n * this.n + 1);
     }
-
-    // test client (optional)
-    public static void main(String[] args) {}
 }
