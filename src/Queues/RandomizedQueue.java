@@ -72,7 +72,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     // remove and return a random item
     public Item dequeue() {
-        if (this.N == 0) {
+        if (isEmpty()) {
             throw new NoSuchElementException();
         }
 

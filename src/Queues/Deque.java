@@ -92,6 +92,10 @@ public class Deque<Item> implements Iterable<Item> {
 
     // remove and return the item from the front
     public Item removeFirst() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
         Node oldFirst = this.first;
         this.first = oldFirst.next;
         this.size--;
@@ -107,6 +111,10 @@ public class Deque<Item> implements Iterable<Item> {
 
     // remove and return the item from the back
     public Item removeLast() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
         Node oldLast = this.last;
         this.last = this.last.prev;
         this.size--;
