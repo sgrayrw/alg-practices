@@ -2,8 +2,6 @@ package Queues;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.Objects;
-
 import edu.princeton.cs.algs4.StdRandom;
 
 // implementation using resizing array
@@ -25,7 +23,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
         @Override
         public boolean hasNext() {
-            return this.cur < this.arrShuffled.length - 1;
+            return this.cur < this.arrShuffled.length;
         }
 
         @Override
@@ -115,5 +113,31 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     // unit testing (required)
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        RandomizedQueue<Integer> rQueue = new RandomizedQueue<>();
+        rQueue.enqueue(1);
+        rQueue.enqueue(2);
+        System.out.println(rQueue.dequeue());
+        System.out.println(rQueue.sample());
+        System.out.println(rQueue.isEmpty());
+        System.out.println(rQueue.size());
+
+        System.out.println(rQueue.dequeue());
+        System.out.println(rQueue.isEmpty());
+        System.out.println(rQueue.size());
+
+        rQueue.enqueue(4);
+        rQueue.enqueue(5);
+        rQueue.enqueue(6);
+        rQueue.enqueue(7);
+        System.out.println(rQueue.isEmpty());
+        System.out.println(rQueue.size());
+        for (Integer x : rQueue) {
+            System.out.print(x);
+        }
+        System.out.println();
+        for (Integer x : rQueue) {
+            System.out.print(x);
+        }
+    }
 }
