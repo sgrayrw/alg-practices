@@ -1,10 +1,10 @@
 # Practice Problems for [Algorithms, Part I](https://www.coursera.org/learn/algorithms-part1/)
 
-## percolation
+## Percolation
 - [Specs](https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php)
 - [Code](src/percolation)
 
-## queues
+## Queues
 - [Specs](https://coursera.cs.princeton.edu/algs4/assignments/queues/specification.php)
 - [Code](src/queues)
 
